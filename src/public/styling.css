@@ -1,0 +1,227 @@
+/* Definisi Variabel Warna */
+:root {
+    --primary-color: #6F6565; /* Background utama */
+    --secondary-color: #191212; /* Warna teks utama & garis */
+    --third-color: #ffffff;    /* Warna teks putih */
+    --accent-color: rgba(187, 157, 24, 0.66); /* Warna aksen dari teks 'WEB DESIGNER' */
+    --text-color-light: rgba(255, 255, 255, 0.6); /* Warna teks abu-abu terang */
+    --text-color-dark: #181818; /* Warna teks navigasi, dari #181818 */
+}
+
+/* Reset CSS Dasar */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Styling Body Keseluruhan */
+body {
+    font-family: 'Poppins', sans-serif; /* Pastikan font ini diimpor */
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper Halaman Utama */
+.page-wrapper {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kontainer Utama untuk Semua Elemen Desain Absolut (Skala dengan Viewport) */
+.content-wrapper {
+    position: relative;
+    width: 100vw; /* Lebar akan menyesuaikan viewport */
+    /* Tinggi dihitung berdasarkan rasio 1440 / 767 (dari MacBook Air - 2) */
+    height: calc(100vw / (1440 / 767));
+    max-width: 1440px; /* Batasi lebar maksimum */
+    max-height: 767px; /* Batasi tinggi maksimum sesuai desain baru */
+    background: transparent;
+    overflow: hidden;
+}
+
+/* Garis-garis Dekoratif */
+.line {
+    position: absolute;
+    border: 1px solid var(--secondary-color);
+}
+
+/* Garis Horizontal Kiri Atas */
+.line-horizontal-tl {
+    width: calc((572 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    height: 0;
+    left: calc((96 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((34 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    /* background: url(Desain tanpa judul (9).png); */ /* Dihapus, ini typo di border */
+}
+
+/* Garis Vertikal Kiri Atas */
+.line-vertical-tl {
+    width: 0;
+    height: calc((371 / 767) * 100vh); /* Disesuaikan dengan desain baru */
+    left: calc((96 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((34 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    transform: rotate(90deg); /* Jika memang perlu rotasi 90deg untuk membuat garis vertikal dari horizontal */
+    transform-origin: 0% 0%; /* Penting untuk rotasi */
+    /* background: url(Desain tanpa judul (9).png); */ /* Dihapus, ini typo di border */
+}
+
+/* Garis Horizontal Kanan Bawah */
+.line-horizontal-br {
+    width: calc((580 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    height: 0;
+    left: calc((765 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((734 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    transform: rotate(180deg); /* Jika memang perlu rotasi 180deg */
+}
+
+/* Garis Vertikal Kanan Bawah */
+.line-vertical-br {
+    width: 0;
+    height: calc((371 / 767) * 100vh); /* Disesuaikan dengan desain baru */
+    left: calc((1345 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((363 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    transform: rotate(-90deg); /* Jika memang perlu rotasi -90deg */
+    transform-origin: 0% 0%; /* Penting untuk rotasi */
+}
+
+/* --- Elemen Teks & Gambar --- */
+
+/* Nama Utama */
+.header-name h1 {
+    position: absolute;
+    width: calc((543 / 1440) * 100vw);
+    left: calc((82 / 1440) * 100vw);
+    top: calc((65 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    font-family: 'Libre Barcode 39 Extended Text', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(20px, calc((64 / 1440) * 100vw), 64px); /* Disesuaikan dengan 64px */
+    line-height: clamp(20px, calc((64 / 1440) * 100vw), 64px); /* Disesuaikan dengan 64px */
+    text-align: center;
+    color: var(--secondary-color);
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* WEB DESIGNER & FRONT-END (Left) */
+.web-designer-left {
+    position: absolute;
+    width: calc((393 / 1440) * 100vw);
+    height: calc((51 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    left: calc((24 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((34 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    font-family: 'Pirata One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, calc((40 / 1440) * 100vw), 40px);
+    line-height: clamp(20px, calc((51 / 767) * 100vh), 51px);
+    text-align: center;
+    color: var(--accent-color);
+    text-shadow: 0px -4px 4px rgba(0, 0, 0, 0.9);
+    transform: rotate(-90deg);
+    transform-origin: 0% 50%;
+}
+
+/* WEB DESIGNER & FRONT-END (Right) */
+.web-designer-right {
+    position: absolute;
+    width: calc((393 / 1440) * 100vw);
+    height: calc((51 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    left: calc((1366 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((338 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    font-family: 'Pirata One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, calc((40 / 1440) * 100vw), 40px);
+    line-height: clamp(20px, calc((51 / 767) * 100vh), 51px);
+    text-align: center;
+    color: var(--accent-color);
+    text-shadow: 0px -4px 4px rgba(0, 0, 0, 0.9);
+    transform: rotate(90deg);
+    transform-origin: 100% 50%;
+}
+
+/* Home */
+.navbar-container {
+    position: absolute;
+    left: calc((152 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((320 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+}
+
+.navbar-container ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbar-container li {
+    margin-bottom: calc((15 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    text-align: center;
+}
+
+.navbar-container li a {
+    font-family: 'Keania One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(14px, calc((20 / 1440) * 100vw), 20px); /* Disesuaikan dengan 20px */
+    line-height: clamp(16px, calc((24 / 767) * 100vh), 24px); /* Disesuaikan dengan 24px */
+    color: var(--text-color-dark);
+    text-decoration: none;
+    display: block;
+    /* gap: calc((10 / 1440) * 100vw); */ /* Dihapus, gap tidak berlaku pada elemen a */
+}
+
+/* Indentasi Navigasi */
+.navbar-container li:nth-child(2) { /* Projects */
+    margin-left: calc((52 / 1440) * 100vw);
+}
+
+.navbar-container li:nth-child(3) { /* Contact */
+    margin-left: calc((96 / 1440) * 100vw);
+}
+
+/* Gambar Utama */
+.main-image {
+    position: absolute;
+    width: calc((503 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    height: calc((359 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    left: calc((460 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((143 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    transform: rotate(-20deg);
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Teks 'About Me' */
+.about-text {
+    position: absolute;
+    width: calc((128 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    height: calc((294 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    left: calc((1184 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    top: calc((388 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    font-family: 'Keania One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(12px, calc((20 / 1440) * 100vw), 20px); /* Disesuaikan dengan 20px */
+    line-height: clamp(14px, calc((24 / 767) * 100vh), 24px); /* Disesuaikan dengan 24px */
+    text-align: center;
+    color: var(--text-color-light);
+}
+
+#app {
+    display: none;
+}
