@@ -8,5 +8,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MAlvin1108/profile_web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MAlvin1108/profile_web/issues"
+  },
+  "homepage": "https://github.com/MAlvin1108/profile_web#readme",
   "description": ""
 }

@@ -6,7 +6,8 @@
     <title>Muhammad Alvin Maulana Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&family=Pirata+One&family=Keania+One&family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/public/styling.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.trunk.min.js"></script>
 </head>
 <body>
     <div class="page-wrapper">
@@ -42,6 +43,36 @@
     </div>
 
     <div id="app"></div>
-    <script src="path/to/your/script.js"></script>
+
+    
+<script>
+var setVanta = ()=>{
+if (window.VANTA) window.VANTA.TRUNK({
+  el: "#app",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  spacing: 1.00,
+  chaos: 6.00
+})
+}
+_strk.push(function() {
+  setVanta()
+  window.edit_page.Event.subscribe( "Page.beforeNewOneFadeIn", setVanta )
+})
+</script>
+    <script>
+        document.addEventListener('DOMcontentdownloaded', function() {
+            const hourglass = document.getElementById('.main-image');
+
+            hourglass.addEventListener('click', function() {
+                this.classList.toggle('spin');
+            });
+        });
+    </script>
 </body>
 </html>

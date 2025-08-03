@@ -41,8 +41,7 @@ body {
 .content-wrapper {
     position: relative;
     width: 100vw; /* Lebar akan menyesuaikan viewport */
-    /* Tinggi dihitung berdasarkan rasio 1440 / 767 (dari MacBook Air - 2) */
-    height: calc(100vw / (1440 / 767));
+    height: calc(100vw / (1440 / 767)); /* Hitung tinggi berdasarkan rasio 1440 / 767 */
     max-width: 1440px; /* Batasi lebar maksimum */
     max-height: 767px; /* Batasi tinggi maksimum sesuai desain baru */
     background: transparent;
@@ -52,46 +51,47 @@ body {
 /* Garis-garis Dekoratif */
 .line {
     position: absolute;
-    border: 1px solid var(--secondary-color);
+    border: 3px solid var(--secondary-color);
+    z-index: 1; /* Pastikan garis berada di belakang elemen teks */
+    box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 /* Garis Horizontal Kiri Atas */
 .line-horizontal-tl {
-    width: calc((572 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    width: calc((572 / 1440) * 100vw);
     height: 0;
-    left: calc((96 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((34 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
-    /* background: url(Desain tanpa judul (9).png); */ /* Dihapus, ini typo di border */
+    left: calc((96 / 1440) * 100vw);
+    top: calc((34 / 767) * 100vh);
+    border-top: 1px solid var(--secondary-color);
 }
 
 /* Garis Vertikal Kiri Atas */
 .line-vertical-tl {
     width: 0;
-    height: calc((371 / 767) * 100vh); /* Disesuaikan dengan desain baru */
-    left: calc((96 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((34 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
-    transform: rotate(90deg); /* Jika memang perlu rotasi 90deg untuk membuat garis vertikal dari horizontal */
-    transform-origin: 0% 0%; /* Penting untuk rotasi */
-    /* background: url(Desain tanpa judul (9).png); */ /* Dihapus, ini typo di border */
+    height: calc((371 / 767) * 100vh);
+    left: calc((96 / 1440) * 100vw);
+    top: calc((34 / 767) * 100vh);
+    border-left: 1px solid var(--secondary-color);
 }
 
 /* Garis Horizontal Kanan Bawah */
 .line-horizontal-br {
-    width: calc((580 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
+    /* Menyesuaikan panjang agar sama dengan garis kiri atas */
+    width: calc((600 / 1440) * 100vw);
     height: 0;
-    left: calc((765 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((734 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
-    transform: rotate(180deg); /* Jika memang perlu rotasi 180deg */
+    right: calc((91 / 1440) * 100vw);
+    top: calc((734 / 767) * 100vh);
+    border-top: 1px solid var(--secondary-color);
 }
 
 /* Garis Vertikal Kanan Bawah */
 .line-vertical-br {
+    /* Tinggi ini sudah sama dengan garis kiri atas (371px) */
     width: 0;
-    height: calc((371 / 767) * 100vh); /* Disesuaikan dengan desain baru */
-    left: calc((1345 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((363 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
-    transform: rotate(-90deg); /* Jika memang perlu rotasi -90deg */
-    transform-origin: 0% 0%; /* Penting untuk rotasi */
+    height: calc((371 / 767) * 100vh);
+    left: calc((1345 / 1440) * 100vw);
+    top: calc((363 / 767) * 100vh);
+    border-left: 1px solid var(--secondary-color);
 }
 
 /* --- Elemen Teks & Gambar --- */
@@ -99,26 +99,25 @@ body {
 /* Nama Utama */
 .header-name h1 {
     position: absolute;
-    width: calc((543 / 1440) * 100vw);
+    width: calc((555 / 1440) * 100vw);
     left: calc((82 / 1440) * 100vw);
-    top: calc((65 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    top: calc((65 / 767) * 100vh);
     font-family: 'Libre Barcode 39 Extended Text', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: clamp(20px, calc((64 / 1440) * 100vw), 64px); /* Disesuaikan dengan 64px */
-    line-height: clamp(20px, calc((64 / 1440) * 100vw), 64px); /* Disesuaikan dengan 64px */
+    font-size: clamp(20px, calc((64 / 1440) * 100vw), 64px);
+    line-height: clamp(20px, calc((64 / 1440) * 100vw), 64px);
     text-align: center;
     color: var(--secondary-color);
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* WEB DESIGNER & FRONT-END (Left) */
 .web-designer-left {
     position: absolute;
     width: calc((393 / 1440) * 100vw);
-    height: calc((51 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
-    left: calc((24 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((34 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    height: calc((51 / 767) * 100vh);
+    left: calc((70 / 1440) * 100vw);
+    top: calc((440/ 767) * 100vh);
     font-family: 'Pirata One', cursive;
     font-style: normal;
     font-weight: 400;
@@ -131,13 +130,12 @@ body {
     transform-origin: 0% 50%;
 }
 
-/* WEB DESIGNER & FRONT-END (Right) */
 .web-designer-right {
     position: absolute;
     width: calc((393 / 1440) * 100vw);
-    height: calc((51 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
-    left: calc((1366 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((338 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    height: calc((51 / 767) * 100vh);
+    right: calc((70 / 1440) * 100vw);
+    bottom: calc((96 / 767) * 100vh);
     font-family: 'Pirata One', cursive;
     font-style: normal;
     font-weight: 400;
@@ -150,11 +148,12 @@ body {
     transform-origin: 100% 50%;
 }
 
+
 /* Home */
 .navbar-container {
     position: absolute;
-    left: calc((152 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((320 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    left: calc((152 / 1440) * 100vw);
+    top: calc((320 / 767) * 100vh);
 }
 
 .navbar-container ul {
@@ -165,7 +164,7 @@ body {
 }
 
 .navbar-container li {
-    margin-bottom: calc((15 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    margin-bottom: calc((15 / 767) * 100vh);
     text-align: center;
 }
 
@@ -173,31 +172,37 @@ body {
     font-family: 'Keania One', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: clamp(14px, calc((20 / 1440) * 100vw), 20px); /* Disesuaikan dengan 20px */
-    line-height: clamp(16px, calc((24 / 767) * 100vh), 24px); /* Disesuaikan dengan 24px */
+    font-size: clamp(14px, calc((20 / 1440) * 100vw), 20px);
+    line-height: clamp(16px, calc((24 / 767) * 100vh), 24px);
     color: var(--text-color-dark);
     text-decoration: none;
     display: block;
-    /* gap: calc((10 / 1440) * 100vw); */ /* Dihapus, gap tidak berlaku pada elemen a */
 }
 
 /* Indentasi Navigasi */
-.navbar-container li:nth-child(2) { /* Projects */
+.navbar-container li:nth-child(2) {
     margin-left: calc((52 / 1440) * 100vw);
 }
 
-.navbar-container li:nth-child(3) { /* Contact */
+.navbar-container li:nth-child(3) {
     margin-left: calc((96 / 1440) * 100vw);
 }
 
 /* Gambar Utama */
 .main-image {
     position: absolute;
-    width: calc((503 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    height: calc((359 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
-    left: calc((460 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((143 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    width: calc((503 / 1440) * 100vw);
+    height: calc((359 / 767) * 100vh);
+    left: calc((460 / 1440) * 100vw);
+    top: calc((143 / 767) * 100vh);
     transform: rotate(-20deg);
+    transform-origin: center;
+    overflow: hidden;
+    opacity: 0.4;
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
 }
 
 .main-image img {
@@ -209,19 +214,59 @@ body {
 /* Teks 'About Me' */
 .about-text {
     position: absolute;
-    width: calc((128 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    height: calc((294 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
-    left: calc((1184 / 1440) * 100vw); /* Disesuaikan dengan desain baru */
-    top: calc((388 / 767) * 100vh); /* Disesuaikan dengan tinggi baru 767px */
+    width: calc((128 / 1440) * 100vw);
+    height: calc((294 / 767) * 100vh);
+    left: calc((1184 / 1440) * 100vw);
+    top: calc((388 / 767) * 100vh);
     font-family: 'Keania One', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: clamp(12px, calc((20 / 1440) * 100vw), 20px); /* Disesuaikan dengan 20px */
-    line-height: clamp(14px, calc((24 / 767) * 100vh), 24px); /* Disesuaikan dengan 24px */
+    font-size: clamp(12px, calc((20 / 1440) * 100vw), 20px);
+    line-height: clamp(14px, calc((24 / 767) * 100vh), 24px);
     text-align: center;
     color: var(--text-color-light);
 }
 
-#app {
-    display: none;
+.navbar-container li a {
+    /* ... (kode yang sudah ada) ... */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transisi untuk warna dan pergerakan */
+}
+
+/* Efek saat kursor di atas anchor */
+.navbar-container li a:hover {
+    color: var(--accent-color); /* Ubah warna teks saat hover */
+    transform: translateX(10px); /* Geser teks 10px ke kanan */
+    text-shadow: 0px 0px 5px rgba(187, 157, 24, 0.66); /* Tambahkan shadow efek glow */
+}
+
+/* --- Efek Transisi pada Gambar Utama (Hourglass) --- */
+.main-image {
+    
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease; 
+    
+}
+
+/* Efek saat kursor di atas gambar */
+.main-image:hover {
+    transform: rotate(0deg) scale(1.1); 
+    opacity: 1; /* Kembalikan opasitas ke 100% (tidak transparan) */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(-20deg); /* Mulai dari rotasi default */
+    }
+    to {
+        transform: rotate(340deg); /* Putar satu putaran penuh (360) + posisi awal (-20) */
+       
+    }
+}
+
+/* Kelas yang akan memicu animasi putar */
+.main-image.spin {
+    animation-name: spin;
+    animation-duration: 2s; /* Durasi animasi, bisa disesuaikan */
+    animation-timing-function: ease-in-out; /* Kurva kecepatan */
+    animation-iteration-count: infinite; /* Ulangi animasi selamanya */
+    animation-direction: alternate; /* Putar bolak-balik */
 }
