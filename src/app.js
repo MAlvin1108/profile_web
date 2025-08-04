@@ -2,6 +2,7 @@ import contactPage from "./scripts/page/contact-page.js"
 import projectPage from "./scripts/page/project-page.js"
 
 
+
 const routes = {
     "/": home,
     "/contact": contactPage,
@@ -15,4 +16,6 @@ const render = () => {
     content.innerHTML = ''; // Clear previous content
     content.appendChild(page());
 };
+
+render(); // Render the initial page
 

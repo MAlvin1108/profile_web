@@ -112,6 +112,7 @@ body {
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
+/* WEB DESIGNER & FRONT-END (Left) */
 .web-designer-left {
     position: absolute;
     width: calc((393 / 1440) * 100vw);
@@ -126,10 +127,15 @@ body {
     text-align: center;
     color: var(--accent-color);
     text-shadow: 0px -4px 4px rgba(0, 0, 0, 0.9);
+    
+    /* Kombinasi rotasi dan animasi */
     transform: rotate(-90deg);
+    animation: slide-up-down 3s ease-in-out infinite alternate; /* Animasi bolak-balik */
+    
     transform-origin: 0% 50%;
 }
 
+/* WEB DESIGNER & FRONT-END (Right) */
 .web-designer-right {
     position: absolute;
     width: calc((393 / 1440) * 100vw);
@@ -144,8 +150,39 @@ body {
     text-align: center;
     color: var(--accent-color);
     text-shadow: 0px -4px 4px rgba(0, 0, 0, 0.9);
+    
+    /* Kombinasi rotasi dan animasi */
     transform: rotate(90deg);
+    animation: slide-up-down 3s ease-in-out infinite alternate; /* Animasi bolak-balik */
+    
     transform-origin: 100% 50%;
+}
+
+/* Animasi untuk teks "WEB DESIGNER & FRONT-END" */
+/* KEYFRAMES untuk animasi teks di kiri (rotasi -90deg) */
+@keyframes slide-up-down-left {
+    0% {
+        transform: rotate(-90deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-90deg) translateY(-20px);
+    }
+    100% {
+        transform: rotate(-90deg) translateY(0);
+    }
+}
+
+/* KEYFRAMES untuk animasi teks di kanan (rotasi 90deg) */
+@keyframes slide-up-down-right {
+    0% {
+        transform: rotate(90deg) translateY(0);
+    }
+    50% {
+        transform: rotate(90deg) translateY(-20px);
+    }
+    100% {
+        transform: rotate(90deg) translateY(0);
+    }
 }
 
 
@@ -185,7 +222,7 @@ body {
 }
 
 .navbar-container li:nth-child(3) {
-    margin-left: calc((96 / 1440) * 100vw);
+    margin-left: calc((110 / 1440) * 100vw);
 }
 
 /* Gambar Utama */
@@ -194,7 +231,7 @@ body {
     width: calc((503 / 1440) * 100vw);
     height: calc((359 / 767) * 100vh);
     left: calc((460 / 1440) * 100vw);
-    top: calc((143 / 767) * 100vh);
+    top: calc((160 / 767) * 100vh);
     transform: rotate(-20deg);
     transform-origin: center;
     overflow: hidden;
